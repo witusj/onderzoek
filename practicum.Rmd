@@ -1,0 +1,19 @@
+---
+title: "Practicum data-analyse met R"
+output: html_notebook
+---
+
+## Stap 1: data ophalen
+
+In dit geval is de databron een SPSS bestand. Hiervoor kunnen we de `foreign` package gebruiken (zit standaard in R). We laten ook een andere handige library waar een aantal handige functies in zitten voor databewerking (filteren, transformeren, etc.)
+
+```{r}
+library(foreign)
+library(tidyverse)
+
+myData <- read.spss("https://github.com/witusj/onderzoek/blob/master/files/enqu%C3%AAte%20woonwensen%20studenten%202016%20data%20in%20SPSS.sav?raw=true", to.data.frame = TRUE)
+
+str(myData)
+```
+
+
