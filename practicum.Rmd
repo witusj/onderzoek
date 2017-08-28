@@ -1,11 +1,17 @@
 ---
 title: "Practicum data-analyse met R"
 output: html_notebook
+author: Witek ten Hove
+date: september 2017
 ---
 
 ## Stap 1: data ophalen
 
-In dit geval is de databron een SPSS bestand. Hiervoor kunnen we de `foreign` package gebruiken (zit standaard in R). We laten ook een andere handige library waar een aantal handige functies in zitten voor databewerking (filteren, transformeren, etc.)
+In dit geval is de databron een SPSS bestand. Hiervoor kunnen we de `foreign` package gebruiken (zit standaard in R). We laden ook een andere handige library waar een aantal handige functies in zitten voor databewerking (filteren, transformeren, etc.)
+
+De ingelezen data wijzen we toe aan een variabele `myData`. De naam van de variabele is een arbitraire keuze en kan zelf bepaald worden. Zorg er echter altijd voor je een unieke naam kiest voor een variabele, tenzij het je expliciete bedoeling is de data die in de variabele is opgeslagen wilt overschrijven.
+
+Met de functie `str()` kunnen we een globaal overzicht krijgen van de *structuur* van de data.
 
 ```{r}
 library(foreign)
@@ -15,5 +21,14 @@ myData <- read.spss("https://github.com/witusj/onderzoek/blob/master/files/enqu%
 
 str(myData)
 ```
+<br>
+Het blijkt dat de data is opgeslagen als een *data frame*. Dit het het standaard formaat, waarmee R werkt en het kan in principe als een gewone tabel worden beschouwd met rijen en kolommen. Iedere rij is een observatie (in dit geval `r dim(myData)[1]` rijen / observaties) en iedere kolom een variabele (`r dim(myData)[2]`). We hebben dus een variabele myData gedefinieerd die een tabel bevat met observaties en variabelen. Een variabele kan dus weer een verzameling van variabelen bevatten.
 
+Iedere variabelen uit de tabel heeft een unieke naam, waarnaar kan worden gerefereerd.
 
+```{r}
+head(myData$WoLastwens, 10)
+```
+<br>
+
+**Tussenvraag:** Wat doet de functie `head()`?
