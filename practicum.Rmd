@@ -25,7 +25,7 @@ Met de functie `str()` kunnen we een globaal overzicht krijgen van de *structuur
 str(rawData)
 ```
 <br>
-Het blijkt dat de data is opgeslagen als een *data frame*. Dit het het standaard formaat, waarmee R werkt en het kan in principe als een gewone tabel worden beschouwd met rijen en kolommen. Iedere rij is een observatie (in dit geval `r dim(myData)[1]` rijen / observaties) en iedere kolom een variabele (`r dim(myData)[2]`). We hebben dus een variabele myData gedefinieerd die een tabel bevat met observaties en variabelen. Een variabele kan dus weer een verzameling van variabelen bevatten.
+Het blijkt dat de data is opgeslagen als een *data frame*. Dit het het standaard formaat, waarmee R werkt en het kan in principe als een gewone tabel worden beschouwd met rijen en kolommen. Iedere rij is een observatie (in dit geval `r dim(rawData)[1]` rijen / observaties) en iedere kolom een variabele (`r dim(rawData)[2]`). We hebben dus een variabele myData gedefinieerd die een tabel bevat met observaties en variabelen. Een variabele kan dus weer een verzameling van variabelen bevatten.
 
 Iedere variabelen uit de tabel heeft een unieke naam, waarnaar kan worden gerefereerd.
 
@@ -34,7 +34,7 @@ head(rawData$WoLastwens, 10)
 ```
 <br>
 
-**Tussenvraag:** Wat doet de functie `head()`?
+**Tussenvraag 1:** Wat doet de functie `head()`?
 
 <br>
 Met de functie `summary()` kan de kwaliteit van de ruwe data worden beoordeeld.
@@ -43,10 +43,14 @@ Met de functie `summary()` kan de kwaliteit van de ruwe data worden beoordeeld.
 summary(rawData)
 ```
 
-Een aantal variabelen bevatten lege waarden (NA = Not Available). We kunnen die eruit filteren met de `na.omit()` functie.
+Een aantal variabelen bevatten lege waarden (NA = Not Available). We kunnen die eruit filteren met de `na.omit()` functie. Alle observaties die lege waarden bevatten, zijn nu weggefilterd. Merk op dat de schone data set nu in een nieuwe variabele is opgeslagen `myData`. We beschikken nu dus over twee data sets: één met de ruwe en een andere met de opgeschoonde data.
 
 ```{r}
 myData <- rawData %>% na.omit()
+cat("De nieuwe data set bevat ", dim(myData)[1], " rijen\n", "De oude data set bevat ", dim(rawData)[1], " rijen\n")
 summary(myData)
 ```
+<br>
+**Tussenvraag 2:** Wat doen de functies `cat()` en `dim()`?
 
+We zien nu echter dat ongeveer `r (1-round(dim(myData)[1]/dim(rawData)[1], 2))*100`% van de data is verdwenen. Dit is zeer onwenselijk en we moeten dus anders omgaan met lege waarden.
