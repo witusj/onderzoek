@@ -63,7 +63,7 @@ summary(myData)
 <br>
 **Tussenvraag 2:** Wat doen de functies `cat()` en `dim()`?
 
-We zien nu echter dat ongeveer `r (1-round(dim(myData)[1]/dim(rawData)[1], 2))*100`% van de data is verdwenen. Dit is zeer onwenselijk en we zullen dus moeten dus anders omgaan met lege waarden. Hier komen we later op terug.
+We zien nu echter dat ongeveer `r (1-round(dim(myData)[1]/dim(rawData)[1], 2))*100`% van de data is verdwenen. Dit is zeer onwenselijk en we zullen dus anders moeten omgaan met lege waarden. Hier komen we later op terug.
 
 ## Stap 3: Visuele inspectie
 De meeste mensen zijn beter in het beoordelen van data in grafische vorm dan als tabel. De standaar installatie van R bevat een aantal goede standaard functies voor grafieken. Een veelgebruikte `package` is echter `ggplot2`. Deze hebben we al eerder geladen met de `package` `tidyverse`.
