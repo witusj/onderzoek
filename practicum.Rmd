@@ -9,7 +9,9 @@ date: september 2017
 
 In dit geval is de databron een SPSS bestand. Hiervoor kunnen we de `foreign` package gebruiken (zit standaard in R). We laden ook een andere handige library waar een aantal handige functies in zitten voor databewerking (filteren, transformeren, etc.)
 
-De ingelezen data wijzen we toe aan een variabele `rawData`. De naam van de variabele is een arbitraire keuze. Zorg er echter altijd voor je een unieke naam kiest voor een variabele. Tenzij het je expliciete bedoeling is de data die in de variabele is opgeslagen te overschrijven.
+In dit geval staat het bestand online, maar je kunt ook verwijzen naar een bestand dat je lokaal hebt opgeslagen. R biedt legio mogelijkheden om verschillende bestandsformaten in te lezen. Zo kun je bijvoorbeeld rechtstreeks uit een database lezen of uit een Google Spreadsheet (die bijvoorbeeld gekoppeld is aan een Google Form).
+
+De ingelezen data wijzen we toe aan een variabele `rawData`. De naam van de variabele is een arbitraire keuze. Zorg er echter altijd voor dat je een unieke naam kiest voor een variabele. Tenzij het je expliciete bedoeling is de data die in de variabele is opgeslagen te overschrijven.
 
 ```{r}
 library(foreign)
