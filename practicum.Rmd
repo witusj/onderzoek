@@ -73,6 +73,7 @@ We kunnen kijken of er verbanden bestaan tussen huidige woonsituatie en de woono
 ```{r}
 myPlot <- ggplot(rawData, aes(x = WoSitnu, y = WoOppnu)) +
   geom_jitter(colour = 'red', size = 2, width = 0.15) +
+  # voeg hier een nieuwe layer toe met geom_point() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 myPlot
 ```
@@ -84,6 +85,6 @@ De volgende `layer` is de `geom_jitter()` functie. Als we de punten zo maar in d
 De laatste `layer` - `theme()` - bepaalt de opmaak van grafiek. Hier kunnen we de orientatie van de tekstlabels op de x-as opgeven en de leesbaarheid verhogen.
 
 <br>
-**Tussenvraag 3:** Verander `geom_jitter()` door `geom_point()` en bekijk het verschil.
+**Tussenvraag 3:** Voeg een layer toe met `geom_point()`, geef het de kleur blauw en bekijk het verschil.
 
 
