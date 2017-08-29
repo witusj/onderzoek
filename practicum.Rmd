@@ -93,6 +93,27 @@ We zien dat de meeste studenten bij hun ouders wonen. Studenten met een eigen ka
 ## Stap 4: Data voorbereiding
 We hebben al eerder getracht de kwaliteit van de data te verbeteren door alle NA's te elimineren. Daarmee hielden we de observaties over die volledig compleet waren. Echter hiermee werd de omvang van de data extreem klein, wat een probleem kan betekenen voor de betrouwbaarheid van eventuele statistische toetsen.
 
+We kunnen eens kijken welke `variabelen` veel NA's bevatten. Hiervoor moeten we eerst de kolommen selecteren die numerieke waarden bevatten.
+
+```{r}
+nums <- sapply(rawData, is.numeric)
+numData <- rawData[,nums]
+head(numData)
+```
+
+De functie `sapply()` past op iedere variabele in een data frame (`rawData`), de opgegeven `functie` toe. In dit geval wordt per kolom op ieder element de functie `is. numeric` toegepast. Deze functie neemt een element en test of het element een getal is of niet. De uitkomst is een `boolean`, `TRUE` of `FALSE`.
+
+Er zijn blijkbaar `r dim(numData)[2]` kolommen met getallen. We kunnen nu snel het percentage NA's bepalen per kolom.
+```{r}
+NAs <- sapply(numData, is.na) %>% as.data.frame
+head(NAs)
+NAs <- NAs * 1
+summary(NAs)
+```
+
+In de eerste stap is ieder element uit de data.frame in de variabele `numData` getest op de hypothese: "Is een NA". De uitkomst is een `boolean` (`TRUE` / `FALSE`). Door alle booleans te vermenigvuldigen met 1 worden het cijfers (`TRUE` = 1 / `FALSE` = 0). Dit wordt zichtbaar als we de `summary()` functie toepassen op de data frame. Iedere variabele bevat alleen twee soorten waarden: het minimum (= 0) en het maximum (= 1). Als we van iedere kolom het gemiddelde berekenen krijgen we de verhouding NAs per variabele. Voor de variabele `WoOppnu` is dat `r round(mean(NAs$WoOppnu)*100, 1)`%.
+
+**Tussenvraag 4:** Leg uit waarom het gemiddelde van de variabele het percentage NAs moet zijn.
 
 
 
