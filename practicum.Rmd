@@ -13,7 +13,7 @@ In dit geval is de databron een SPSS bestand. Hiervoor kunnen we de `foreign` `p
 
 ![](images/install.png)
 
-<br>
+<hr>
 In dit geval staat het bestand online, maar je kunt ook verwijzen naar een bestand dat je lokaal hebt opgeslagen. R biedt legio mogelijkheden om verschillende bestandsformaten in te lezen. Zo kun je bijvoorbeeld rechtstreeks uit een database lezen of uit een [Google Spreadsheet](https://cran.r-project.org/web/packages/gsheet/gsheet.pdf) (die bijvoorbeeld gekoppeld is aan een Google Form).
 
 De ingelezen data wijzen we toe aan een variabele `rawData`. De naam van de variabele is een arbitraire keuze. Zorg er echter altijd voor dat je een unieke naam kiest voor een variabele. Tenzij het je expliciete bedoeling is de data die in de variabele is opgeslagen te overschrijven.
@@ -81,9 +81,11 @@ myPlot
 
 `ggplot` werkt met `layers`. Als eerste definieren we de databron (in ons geval `rawData`) en de x- en y-variabelen (`WoSitnu` en `WoOppnu`).
 
-De volgende `layer` is de `geom_jitter()` functie. Als we de punten zo maar in de grafiek zouden laten tekenen, zou er veel overlap zijn. Door wat `random noise` toe te voegen, worden alle punten zichtbaar en wordt de spreiding beter zichtbaar. We kunnen hier onder de kleur en de grootte van de punten aangeven en hoever ze van elkaar verspreid worden (mate van `noise`).
+De volgende `layer` is de `geom_jitter()` functie. Als we de punten zo maar in de grafiek zouden laten tekenen, zou er veel overlap zijn. Door wat `random noise` toe te voegen, worden alle punten zichtbaar en wordt de spreiding beter zichtbaar. We kunnen hier onder andere de kleur en de grootte van de punten instellen en hoe ver ze van elkaar verspreid worden (mate van `noise`).
 
 De laatste `layer` - `theme()` - bepaalt de opmaak van grafiek. Hier kunnen we de orientatie van de tekstlabels op de x-as opgeven en de leesbaarheid verhogen.
+
+We zien dat de meeste studenten bij hun ouders wonen. Studenten met een eigen kamer hebben een kleiner woonoppervlakte opgegeven. Het is nog de vraag of studenten daadwerkelijk een kamer hebben van 80 m2 of dat de vraag niet helemaal duidelijk voor ze was.
 
 <br>
 **Tussenvraag 3:** Voeg een layer toe met `geom_point()`, geef het de kleur blauw en bekijk het verschil.
