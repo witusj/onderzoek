@@ -5,6 +5,8 @@ author: Witek ten Hove
 date: september 2017
 ---
 
+Zie voor informatie over R de bijbehorende [workshop](https://witusj.github.io/WorkshopSI/) 
+
 ## Stap 1: data ophalen
 
 In dit geval is de databron een SPSS bestand. Hiervoor kunnen we de `foreign` `package` gebruiken. We laden ook een andere handige `package` waar een aantal handige functies in zitten voor databewerking (filteren, transformeren, etc.).
