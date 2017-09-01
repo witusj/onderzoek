@@ -87,7 +87,7 @@ De volgende `layer` is de `geom_jitter()` functie. Als we de punten zo maar in d
 
 De laatste `layer` - `theme()` - bepaalt de opmaak van grafiek. Hier kunnen we de orientatie van de tekstlabels op de x-as opgeven en de leesbaarheid verhogen.
 
-We zien dat de meeste studenten bij hun ouders wonen. Studenten met een eigen kamer hebben een kleiner woonoppervlakte opgegeven. Het is nog de vraag of studenten daadwerkelijk een kamer hebben van 80 m2 of dat de vraag niet helemaal duidelijk voor ze was.
+We zien dat de meeste studenten bij hun ouders wonen. Studenten met een eigen kamer hebben een kleiner woonoppervlakte opgegeven. Het is nog de vraag of thuiswondende studenten daadwerkelijk een kamer hebben van 80 m2 of dat de vraag niet helemaal duidelijk voor ze was. In ieder geval is dit een punt dat tijdens het ontwerp van een enquete getest en onderzocht dient te worden.
 
 <br>
 **Tussenvraag 3:** Voeg een layer toe met `geom_point()`, geef het de kleur blauw en bekijk het verschil.
