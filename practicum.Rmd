@@ -72,10 +72,10 @@ De meeste mensen zijn beter in het beoordelen van data in grafische vorm dan als
 
 We kunnen kijken of er verbanden bestaan tussen huidige woonsituatie en de woonoppervlakte.
 
-```{r}
+```{r fig.height=2.5}
 myPlot <- ggplot(rawData, aes(x = WoSitnu, y = WoOppnu)) +
   geom_jitter(colour = 'red', size = 2, width = 0.15) +
-  # voeg hier een nieuwe layer toe met geom_point() +
+  # Voeg hier een nieuwe layer toe met geom_point() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 myPlot
 ```
